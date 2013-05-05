@@ -1,6 +1,6 @@
-#import "UIImageView+Convenience.h"
+#import "UIImageView+BDKKit.h"
 
-@implementation UIImageView (Convenience)
+@implementation UIImageView (BDKKit)
 
 + (id)imageViewWithImage:(UIImage *)image {
     return [[UIImageView alloc] initWithImage:image];
