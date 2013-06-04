@@ -6,6 +6,8 @@ Pod::Spec.new do |s|
   s.license      = { :type => 'MIT', :file => 'LICENSE.markdown' }
   s.author       = { 'Ben Kreeger' => 'ben@kree.gr' }
   s.source       = { :git => 'https://github.com/kreeger/BDKKit.git', :tag => '0.0.1' }
-  s.source_files = 'Classes', 'Classes/**/*.{h,m}'
+  s.source_files = 'Classes/**/*.{h,m}'
+  s.resources    = 'Resources/**'
+  s.frameworks   = 'QuartzCore'
   s.requires_arc = true
 end

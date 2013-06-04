@@ -19,6 +19,11 @@
  */
 - (NSString *)stringByUrlEncoding;
 
+/** URL-decodes a string.
+ *  @returns a URL-decoded version of self.
+ */
+- (NSString *)stringByUrlDecoding;
+
 /** Returns a string modified by capitalizing the first letter.
  *  @returns A new string with a capitalized first letter.
  */

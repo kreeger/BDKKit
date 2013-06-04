@@ -14,6 +14,11 @@
     return (NSString *)CFBridgingRelease(CFURLCreateStringByAddingPercentEscapes(NULL, (CFStringRef)self, NULL, (CFStringRef)@"!*'();:@&amp;=+$,/?%#[]", kCFStringEncodingUTF8));
 }
 
+- (NSString *)stringByUrlDecoding {
+    NSString *result = [self stringByReplacingOccurrencesOfString:@"+" withString:@" "];
+    return [result stringByReplacingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+}
+
 - (NSString *)stringByCapitalizingFirstLetter {
     return [self stringByReplacingCharactersInRange:NSMakeRange(0,1)
                                          withString:[[self substringToIndex:1] uppercaseString]];
