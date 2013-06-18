@@ -1,5 +1,8 @@
 #import "BDKFunctions.h"
 
+#import <UIKit/UIKit.h>
+#import <Foundation/Foundation.h>
+
 #pragma mark - Math
 
 double DEG_TO_RAD(double degrees) { return degrees * M_PI / 180.0; }
