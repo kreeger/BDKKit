@@ -1,4 +1,5 @@
-#import <UIKit/UIImage.h>
+#import <UIKit/UIKit.h>
+#import <Foundation/Foundation.h>
 
 /* Some of these are pulled from ZaBlanc's InnerBand framework. https://github.com/ZaBlanc/InnerBand */
 
