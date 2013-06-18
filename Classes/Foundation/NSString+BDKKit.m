@@ -1,9 +1,10 @@
 #import "NSString+BDKKit.h"
+#import "NSObject+BDKKit.h"
 
 @implementation NSString (BDKKit)
 
 - (BOOL)isEmptyOrNull {
-    return self == nil || [(NSNull *)self isEqual:[NSNull null]] || [self isEqual:@""];
+    return self == nil || [self isNull] || [self isEqual:@""];
 }
 
 - (NSURL *)urlValue {
