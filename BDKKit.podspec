@@ -8,6 +8,6 @@ Pod::Spec.new do |s|
   s.source       = { :git => 'https://github.com/kreeger/BDKKit.git', :tag => 'v0.0.2' }
   s.source_files = 'Classes/**/*.{h,m}'
   s.resources    = 'Resources/**'
-  s.frameworks   = 'QuartzCore'
+  s.frameworks   = 'UIKit', 'Foundation', 'QuartzCore'
   s.requires_arc = true
 end
