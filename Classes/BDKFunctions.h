@@ -1,6 +1,5 @@
 #import <Foundation/Foundation.h>
-
-@class UIImage, UIColor;
+#import <UIKit/UIKit.h>
 
 /* Some of these are pulled from ZaBlanc's InnerBand framework. https://github.com/ZaBlanc/InnerBand */
 
