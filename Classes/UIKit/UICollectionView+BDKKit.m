@@ -3,28 +3,36 @@
 @implementation UICollectionView (BDKKit)
 
 - (NSIndexPath *)minimumIndexPath {
-    return [NSIndexPath indexPathForRow:0 inSection:0];
+    return [NSIndexPath indexPathForItem:0 inSection:0];
 }
 
 - (NSIndexPath *)maximumIndexPath {
     NSInteger lastSection = self.numberOfSections - 1;
-    NSInteger lastRow = [self numberOfItemsInSection:lastSection] - 1;
-    return [NSIndexPath indexPathForRow:lastRow inSection:lastSection];
+    NSInteger lastitem = [self numberOfItemsInSection:lastSection] - 1;
+    return [NSIndexPath indexPathForItem:lastitem inSection:lastSection];
 }
 
 - (NSIndexPath *)incrementIndexPath:(NSIndexPath *)indexPath {
-    if ([indexPath compare:self.maximumIndexPath] == NSOrderedSame) return self.minimumIndexPath;
-    if (indexPath.row == [self numberOfItemsInSection:indexPath.section] - 1) {
-        return [NSIndexPath indexPathForRow:0 inSection:(indexPath.section + 1)];
-    } else return [NSIndexPath indexPathForRow:(indexPath.row + 1) inSection:indexPath.section];
+    return [self incrementIndexPath:indexPath wrap:YES];
+}
+
+- (NSIndexPath *)incrementIndexPath:(NSIndexPath *)indexPath wrap:(BOOL)wrap {
+    if ([indexPath compare:self.maximumIndexPath] == NSOrderedSame) return wrap ? self.minimumIndexPath : nil;
+    if (indexPath.item == [self numberOfItemsInSection:indexPath.section] - 1) {
+        return [NSIndexPath indexPathForItem:0 inSection:(indexPath.section + 1)];
+    } else return [NSIndexPath indexPathForItem:(indexPath.item + 1) inSection:indexPath.section];
 }
 
 - (NSIndexPath *)decrementIndexPath:(NSIndexPath *)indexPath {
-    if ([indexPath compare:self.minimumIndexPath] == NSOrderedSame) return self.maximumIndexPath;
-    if (indexPath.row == 0) {
-        NSInteger lastRow = [self numberOfItemsInSection:(indexPath.section - 1)] - 1;
-        return [NSIndexPath indexPathForRow:lastRow inSection:(indexPath.section - 1)];
-    } else return [NSIndexPath indexPathForRow:(indexPath.row - 1) inSection:indexPath.section];
+    return [self decrementIndexPath:indexPath wrap:YES];
+}
+
+- (NSIndexPath *)decrementIndexPath:(NSIndexPath *)indexPath wrap:(BOOL)wrap {
+    if ([indexPath compare:self.minimumIndexPath] == NSOrderedSame) return wrap ? self.maximumIndexPath : nil;
+    if (indexPath.item == 0) {
+        NSInteger lastItem = [self numberOfItemsInSection:(indexPath.section - 1)] - 1;
+        return [NSIndexPath indexPathForItem:lastItem inSection:(indexPath.section - 1)];
+    } else return [NSIndexPath indexPathForItem:(indexPath.item - 1) inSection:indexPath.section];
 }
 
 @end
