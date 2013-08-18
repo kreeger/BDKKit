@@ -2,6 +2,14 @@
 
 @implementation NSDate (BDKKit)
 
++ (NSDate *)dateWithYear:(NSInteger)year month:(NSInteger)month day:(NSInteger)day {
+    NSDateComponents *components = [NSDateComponents new];
+    components.year = year;
+    components.month = month;
+    components.day = day;
+    return [[NSCalendar currentCalendar] dateFromComponents:components];
+}
+
 + (NSDate *)dateFromString:(NSString *)dateString {
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
     dateFormatter.dateFormat = @"YYYY-mm-dd";
