@@ -6,11 +6,11 @@
     return [[self userInfo][UIKeyboardAnimationDurationUserInfoKey] doubleValue];
 }
 
-- (CGRect)endingKeyboardFrame {
+- (CGRect)keyboardEndFrame {
     return [[self userInfo][UIKeyboardFrameEndUserInfoKey] CGRectValue];
 }
 
-- (CGRect)beginningKeyboardFrame {
+- (CGRect)keyboardBeginFrame {
     return [[self userInfo][UIKeyboardFrameBeginUserInfoKey] CGRectValue];
 }
 
