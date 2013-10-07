@@ -69,7 +69,9 @@
     NSManagedObjectContext *moc = self.mainMOC;
     if (!moc) return;
     
-    NSLog(@"Attempting to save context %@ changes.", [moc hasChanges] ? @"with" : @"without any");
+    if ([moc hasChanges])
+        NSLog(@"Attempting to save context %p with changes.", self);
+
     if ([moc hasChanges] && ![moc save:&error]) {
         // Replace this implementation with code to handle the error appropriately.
         // abort() causes the application to generate a crash log and terminate. You should not use this function in
