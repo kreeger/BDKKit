@@ -51,7 +51,7 @@
 
 - (void)setupSaveNotification {
     [[NSNotificationCenter defaultCenter] addObserverForName:NSManagedObjectContextDidSaveNotification
-                                                      object:nil
+                                                      object:self.mainMOC
                                                        queue:nil
                                                   usingBlock:^(NSNotification *note) {
                                                       NSManagedObjectContext *moc = self.mainMOC;
@@ -85,6 +85,7 @@
     if (_mainMOC) return _mainMOC;
     _mainMOC = [[NSManagedObjectContext alloc] initWithConcurrencyType:NSMainQueueConcurrencyType];
     [_mainMOC setPersistentStoreCoordinator:self.psc];
+    [_mainMOC setMergePolicy:NSMergeByPropertyObjectTrumpMergePolicy];
     return _mainMOC;
 }
 

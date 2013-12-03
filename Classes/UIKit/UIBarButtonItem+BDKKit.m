@@ -1,12 +1,13 @@
 #import "UIBarButtonItem+BDKKit.h"
 
+
 @implementation UIBarButtonItem (BDKKit)
 
-+ (UIBarButtonItem *)flexibleSpace {
++ (instancetype)flexibleSpace {
     return [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:nil action:nil];
 }
 
-+ (UIBarButtonItem *)fixedSpace {
++ (instancetype)fixedSpace {
     return [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFixedSpace target:nil action:nil];
 }
 

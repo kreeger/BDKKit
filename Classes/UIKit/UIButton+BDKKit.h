@@ -2,10 +2,12 @@
 
 @interface UIButton (BDKKit)
 
-+ (id)buttonWithCustomView:(UIView *)customView;
-+ (id)buttonWithCustomView:(UIView *)customView size:(CGSize)size;
-+ (id)buttonWithBarStyleAndTintColor:(UIColor *)tintColor customView:(UIView *)customView;
-+ (id)buttonWithTranslucentBarStyleAndCustomView:(UIView *)customView;
-+ (id)buttonWithDefaultBarStyleAndCustomView:(UIView *)customView;
++ (instancetype)buttonWithCustomView:(UIView *)customView;
++ (instancetype)buttonWithCustomView:(UIView *)customView size:(CGSize)size;
++ (instancetype)buttonWithBarStyleAndTintColor:(UIColor *)tintColor customView:(UIView *)customView;
++ (instancetype)buttonWithTranslucentBarStyleAndCustomView:(UIView *)customView;
++ (instancetype)buttonWithDefaultBarStyleAndCustomView:(UIView *)customView;
+
+- (void)setTouchUpInsideBlock:(void (^)(UIButton *sender))touchUpInsideBlock;
 
 @end

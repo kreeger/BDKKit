@@ -2,7 +2,7 @@
 
 @interface UIBarButtonItem (BDKKit)
 
-+ (UIBarButtonItem *)flexibleSpace;
-+ (UIBarButtonItem *)fixedSpace;
++ (instancetype)flexibleSpace;
++ (instancetype)fixedSpace;
 
 @end

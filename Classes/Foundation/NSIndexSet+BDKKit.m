@@ -9,4 +9,14 @@
     return theIndex;
 }
 
+- (NSInteger)indexOfIndex:(NSInteger)index {
+    __block NSInteger counter = -1;
+    NSInteger foundIndex = [self indexPassingTest:^BOOL(NSUInteger idx, BOOL *stop) {
+        counter++;
+        return idx == index;
+    }];
+
+    return foundIndex ? counter : NSNotFound;
+}
+
 @end
