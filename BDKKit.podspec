@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = 'BDKKit'
-  s.version      = '0.0.5'
+  s.version      = '0.0.6'
   s.summary      = 'An abstraction full of categories and other helpers.'
   s.homepage     = 'https://github.com/kreeger/BDKKit'
   s.license      = { :type => 'MIT', :file => 'LICENSE.markdown' }
